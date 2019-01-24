@@ -2,10 +2,10 @@ FROM golang:1.11.0-alpine3.8
 
 WORKDIR /go/src/app
 
-RUN apk add --no-cache git mercurial \
+RUN apk add --no-cache git \
     && go get github.com/gorilla/mux \
     && go get gopkg.in/mgo.v2 \
-    && apk del git mercurial
+    && apk del git
 
 COPY ./src .
 
